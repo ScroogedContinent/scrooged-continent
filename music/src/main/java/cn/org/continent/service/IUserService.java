@@ -1,6 +1,7 @@
 package cn.org.continent.service;
 
 import cn.org.continent.base.entity.DataTable;
+import cn.org.continent.base.exception.ResponseBean;
 import cn.org.continent.base.service.IBaseService;
 import cn.org.continent.entity.User;
 
@@ -29,5 +30,5 @@ public interface IUserService extends IBaseService<User> {
 
     List<User> selectAll();
 
-    DataTable<User> findByPage(DataTable dataTable);
+    ResponseBean<DataTable<User>> findByPage(DataTable dataTable);
 }

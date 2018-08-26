@@ -1,5 +1,8 @@
 package cn.org.continent.entity;
 
+import cn.org.continent.annotation.Fulltext;
+import cn.org.continent.annotation.OrderField;
+import cn.org.continent.constant.DbConstant;
 import cn.org.continent.entity.enums.SexEnum;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
@@ -22,7 +25,10 @@ import java.io.Serializable;
 public class User extends Model<User> implements Serializable {
     @TableId
     private String sid;
+    @Fulltext
+    @OrderField(value = DbConstant.ORDER_DESC)
     private String sname;
+    @Fulltext
     private SexEnum sex;
     private String age;
 

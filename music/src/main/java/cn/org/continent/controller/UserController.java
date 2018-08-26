@@ -2,6 +2,7 @@ package cn.org.continent.controller;
 
 import cn.org.continent.base.entity.DataTable;
 import cn.org.continent.base.entity.SearchParam;
+import cn.org.continent.base.exception.ResponseBean;
 import cn.org.continent.entity.User;
 import cn.org.continent.service.IUserService;
 import io.swagger.annotations.Api;
@@ -70,7 +71,7 @@ public class UserController {
 
     @GetMapping("/user/page")
     @ApiOperation(value = "分页查询所有人", notes = "分页查询所有人")
-    public DataTable<User> pageSearch(SearchParam searchParam){
+    public ResponseBean<DataTable<User>> pageSearch(SearchParam searchParam){
         return userService.findByPage(new DataTable(searchParam));
     }
 }

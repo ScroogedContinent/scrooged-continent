@@ -1,6 +1,7 @@
 package cn.org.continent.service.impl;
 
 import cn.org.continent.base.entity.DataTable;
+import cn.org.continent.base.exception.ResponseBean;
 import cn.org.continent.base.service.impl.BaseServiceImpl;
 import cn.org.continent.entity.User;
 import cn.org.continent.mapper.IUserMapper;
@@ -53,7 +54,7 @@ public class UserServiceImpl extends BaseServiceImpl<IUserMapper, User> implemen
     }
 
     @Override
-    public DataTable<User> findByPage(DataTable dataTable) {
-        return pageSearch(dataTable);
+    public ResponseBean<DataTable<User>> findByPage(DataTable dataTable) {
+        return new ResponseBean<DataTable<User>>().returnData(pageSearch(dataTable));
     }
 }
