@@ -102,6 +102,7 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, 
                     if( field.getAnnotation(OrderField.class).primary() ){
                         map.clear();
                         map.put(field.getName(), field.getAnnotation(OrderField.class).value());
+						//跳出当前的循环
                         throw new RuntimeException();
                     }
                     map.put(field.getName(), field.getAnnotation(OrderField.class).value());
