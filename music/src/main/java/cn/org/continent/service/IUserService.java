@@ -1,7 +1,7 @@
 package cn.org.continent.service;
 
 import cn.org.continent.base.entity.DataTable;
-import cn.org.continent.base.exception.ResponseBean;
+import cn.org.continent.base.entity.ResponseBean;
 import cn.org.continent.base.service.IBaseService;
 import cn.org.continent.entity.User;
 
@@ -26,7 +26,7 @@ public interface IUserService extends IBaseService<User> {
 
     boolean modifyById(User user);
 
-    boolean add(User user);
+    ResponseBean<User> add(User user);
 
     List<User> selectAll();
 

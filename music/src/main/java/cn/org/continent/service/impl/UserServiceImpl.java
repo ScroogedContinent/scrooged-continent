@@ -1,12 +1,13 @@
 package cn.org.continent.service.impl;
 
 import cn.org.continent.base.entity.DataTable;
-import cn.org.continent.base.exception.ResponseBean;
+import cn.org.continent.base.entity.ResponseBean;
 import cn.org.continent.base.service.impl.BaseServiceImpl;
 import cn.org.continent.entity.User;
 import cn.org.continent.mapper.IUserMapper;
 import cn.org.continent.service.IUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
  * @date 2018/8/23 16:47
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl extends BaseServiceImpl<IUserMapper, User> implements IUserService {
 
     @Resource
@@ -44,8 +46,9 @@ public class UserServiceImpl extends BaseServiceImpl<IUserMapper, User> implemen
     }
 
     @Override
-    public boolean add(User user) {
-        return insert(user);
+    public ResponseBean<User> add(User user) {
+        insert(user);
+        return new ResponseBean<User>().returnData(user);
     }
 
     @Override

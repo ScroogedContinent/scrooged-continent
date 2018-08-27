@@ -2,7 +2,7 @@ package cn.org.continent.controller;
 
 import cn.org.continent.base.entity.DataTable;
 import cn.org.continent.base.entity.SearchParam;
-import cn.org.continent.base.exception.ResponseBean;
+import cn.org.continent.base.entity.ResponseBean;
 import cn.org.continent.entity.User;
 import cn.org.continent.service.IUserService;
 import io.swagger.annotations.Api;
@@ -59,7 +59,7 @@ public class UserController {
 
     @PostMapping("/user")
     @ApiOperation(value = "新增用户", notes = "新增用户")
-    public boolean delById(@RequestBody User user){
+    public ResponseBean<User> delById(@RequestBody User user){
         return userService.add(user);
     }
 

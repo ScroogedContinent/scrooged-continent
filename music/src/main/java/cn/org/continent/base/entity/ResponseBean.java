@@ -1,4 +1,4 @@
-package cn.org.continent.base.exception;
+package cn.org.continent.base.entity;
 
 import java.io.Serializable;
 

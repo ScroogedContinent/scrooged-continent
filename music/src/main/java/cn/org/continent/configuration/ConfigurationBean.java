@@ -2,10 +2,14 @@ package cn.org.continent.configuration;
 
 import cn.org.continent.util.FieldMetaObjectHandler;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.plugins.parser.ISqlParser;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Design By Scrooged
@@ -27,6 +31,8 @@ public class ConfigurationBean {
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
+        List<ISqlParser> sqlParsers = new ArrayList<>();
+        //sqlParsers.add();
         return new PaginationInterceptor().setDialectType("mysql");
     }
 }

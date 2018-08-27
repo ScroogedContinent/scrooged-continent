@@ -1,5 +1,6 @@
 package cn.org.continent.base.exception;
 
+import cn.org.continent.base.entity.ResponseBean;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
