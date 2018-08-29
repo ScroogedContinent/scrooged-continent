@@ -9,7 +9,7 @@ import org.apache.ibatis.reflection.MetaObject;
 /**
  * @author Design By Scrooged
  * @version 1.0
- * @description
+ * @description 数据集过滤
  * @date 2018/8/27 15:09
  */
 public class DataSerAuthSqlParser implements ISqlParser {
@@ -20,6 +20,7 @@ public class DataSerAuthSqlParser implements ISqlParser {
         if( !SqlCommandType.SELECT.equals(mappedStatement.getSqlCommandType()) ){
             return null;
         }
+        // TODO: 2018/8/29
         return null;
     }
 }

@@ -24,7 +24,7 @@ spring:
         #连接池中的最小空闲连接
         min-idle: 0
     #连接超时时间
-    timeout: 0ms
+    timeout: 5000ms
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml

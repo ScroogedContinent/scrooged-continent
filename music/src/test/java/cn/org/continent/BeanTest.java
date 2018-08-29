@@ -13,5 +13,6 @@ public class BeanTest {
     @Test
     public void isHave(){
         //ApplicationContext apc =
+
     }
 }

@@ -84,4 +84,15 @@ public class User extends Model<User> implements Serializable {
     protected Serializable pkVal() {
         return getSid();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "sid='" + sid + '\'' +
+                ", sname='" + sname + '\'' +
+                ", sex=" + sex +
+                ", age='" + age + '\'' +
+                ", delFlg='" + delFlg + '\'' +
+                '}';
+    }
 }

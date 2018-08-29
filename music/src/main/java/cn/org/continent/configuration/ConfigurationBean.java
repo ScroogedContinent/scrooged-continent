@@ -1,5 +1,6 @@
 package cn.org.continent.configuration;
 
+import cn.org.continent.base.sqlparser.DataSerAuthSqlParser;
 import cn.org.continent.util.FieldMetaObjectHandler;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.parser.ISqlParser;
@@ -31,8 +32,14 @@ public class ConfigurationBean {
      */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
-        List<ISqlParser> sqlParsers = new ArrayList<>();
-        //sqlParsers.add();
+
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        paginationInterceptor.setDialectType("mysql");
+
+        List<ISqlParser> sqlParsers = new ArrayList<>();//加载实现了ISqlParser接口的解析器
+        sqlParsers.add(new DataSerAuthSqlParser());
+
+        paginationInterceptor.setSqlParserList(sqlParsers);
         return new PaginationInterceptor().setDialectType("mysql");
     }
 }
